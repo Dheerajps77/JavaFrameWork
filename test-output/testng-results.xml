@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38019" started-at="2019-04-22T09:22:12Z" finished-at="2019-04-22T09:22:50Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38019" started-at="2019-04-22T09:22:12Z" finished-at="2019-04-22T09:22:50Z">
+      <class name="RoughWork.VerifyColors">
+        <test-method status="PASS" signature="initWebBrowser()[pri:0, instance:RoughWork.VerifyColors@675d3402]" name="initWebBrowser" is-config="true" duration-ms="37924" started-at="2019-04-22T14:52:12Z" finished-at="2019-04-22T14:52:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebBrowser -->
+        <test-method status="PASS" signature="VerifyColor()[pri:0, instance:RoughWork.VerifyColors@675d3402]" name="VerifyColor" duration-ms="85" started-at="2019-04-22T14:52:50Z" finished-at="2019-04-22T14:52:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyColor -->
+      </class> <!-- RoughWork.VerifyColors -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
