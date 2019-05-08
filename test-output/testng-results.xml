@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38019" started-at="2019-04-22T09:22:12Z" finished-at="2019-04-22T09:22:50Z">
+  <suite name="Default suite" duration-ms="483419" started-at="2019-05-08T10:18:23Z" finished-at="2019-05-08T10:26:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38019" started-at="2019-04-22T09:22:12Z" finished-at="2019-04-22T09:22:50Z">
-      <class name="RoughWork.VerifyColors">
-        <test-method status="PASS" signature="initWebBrowser()[pri:0, instance:RoughWork.VerifyColors@675d3402]" name="initWebBrowser" is-config="true" duration-ms="37924" started-at="2019-04-22T14:52:12Z" finished-at="2019-04-22T14:52:50Z">
+    <test name="Default test" duration-ms="483419" started-at="2019-05-08T10:18:23Z" finished-at="2019-05-08T10:26:27Z">
+      <class name="RoughWork.DateClick">
+        <test-method status="PASS" signature="OpenBrowser()[pri:0, instance:RoughWork.DateClick@78e117e3]" name="OpenBrowser" is-config="true" duration-ms="35666" started-at="2019-05-08T15:48:23Z" finished-at="2019-05-08T15:48:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initWebBrowser -->
-        <test-method status="PASS" signature="VerifyColor()[pri:0, instance:RoughWork.VerifyColors@675d3402]" name="VerifyColor" duration-ms="85" started-at="2019-04-22T14:52:50Z" finished-at="2019-04-22T14:52:50Z">
+        </test-method> <!-- OpenBrowser -->
+        <test-method status="PASS" signature="ClickOnDate()[pri:0, instance:RoughWork.DateClick@78e117e3]" name="ClickOnDate" duration-ms="442413" started-at="2019-05-08T15:48:59Z" finished-at="2019-05-08T15:56:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyColor -->
-      </class> <!-- RoughWork.VerifyColors -->
+        </test-method> <!-- ClickOnDate -->
+      </class> <!-- RoughWork.DateClick -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,8 +1,8 @@
-package com.java.framework.BaseClass;
+package com.java.framework.TestClasses;
 import org.testng.annotations.Test;
 
 public class ExtentReportDemo {
-	
+		
 	
 	@Test(priority=0)
 	public void Login()

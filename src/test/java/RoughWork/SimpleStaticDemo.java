@@ -7,6 +7,7 @@ public class SimpleStaticDemo {
 	static String CEOName;
 	
 	 static String str="mukesh";
+	 
 	
 	public static void main(String[] args) {
 		
