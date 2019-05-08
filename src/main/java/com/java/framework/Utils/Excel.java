@@ -28,11 +28,9 @@ public class Excel {
 			workbook = new XSSFWorkbook(fileStream);
 
 		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 			System.out.println(fileName + " file not found in " + folderName + " folder");
-		} catch (Exception e) {
-			// TODO: handle exception
-//			e.printStackTrace();
+		} catch (Exception e) {			
 			System.out.println(fileName + " file not found in " + folderName + " folder");
 			e.printStackTrace();
 			System.out.println(e.getMessage());
