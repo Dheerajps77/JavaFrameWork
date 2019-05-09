@@ -1,6 +1,24 @@
 package com.java.framework.TestClasses;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
 import java.util.Properties;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.openxml4j.util.ZipSecureFile;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.java.framework.Utils.EnvironmentPropertiesReader;
 import com.java.framework.Utils.Excel;
@@ -28,7 +46,10 @@ public class ExcelReadDemo {
 
 			ReadData1(folderName, fileName, sheetName);
 			ReadData2(folderName, fileName, sheetName);
-			writeData(row, col, value, newRow, color,sheetName, folderName, fileName);			
+			writeData(row, col, value, newRow, color,sheetName, folderName, fileName); 			
+			String str="./TestDataFile/Suggestion.xlsx";
+			String sheetName1="Bugs_4_29_2019";
+			ReadAllExcelData(str, sheetName);
 
 		} catch (Exception e) {
 
@@ -37,6 +58,36 @@ public class ExcelReadDemo {
 			System.out.println(e.getCause());
 		}
 
+	}
+	
+	public static Workbook GetWorkbookObj(String workbookpath) throws IOException {
+		Workbook wobj=null;
+		FileInputStream file=new FileInputStream(workbookpath);
+		ZipSecureFile.setMinInflateRatio(0);
+		if(workbookpath.endsWith("xlsx")) {
+			wobj=new XSSFWorkbook(file);
+		}else {
+			wobj=new HSSFWorkbook(file);
+		}
+		return wobj;
+	}
+	
+	
+	public static void ReadAllExcelData(String path,String sheetname) throws Exception {
+		 Workbook wobj=GetWorkbookObj(path);
+		 Sheet sheetobj=wobj.getSheet(sheetname);
+		 int rownum=sheetobj.getLastRowNum();
+		 for(int i=1;i<=rownum;i++) {
+			 Row rowobj=sheetobj.getRow(i);
+			 int cellnum=rowobj.getLastCellNum();
+			 for(int j=0;j<=cellnum-1;j++) {
+				 Cell cellobj=rowobj.getCell(j);
+				 cellobj.setCellType(CellType.STRING);
+				 String cellvalue=cellobj.getStringCellValue();	
+				 System.out.print(cellvalue + " || ");
+			 }
+			 System.out.println("\n");
+		 }
 	}
 
 	public static void ReadData1(String folderName, String fileName, String sheetName) {
@@ -85,5 +136,5 @@ public class ExcelReadDemo {
 			System.out.println(e.getMessage());
 
 		}
-	}		
+	} 
 }
