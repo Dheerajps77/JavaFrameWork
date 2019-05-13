@@ -42,14 +42,18 @@ public class ExcelReadDemo {
 		String value = "Status";
 		String newRow = "yes";
 		String color = "Green";
+		String excelSheetPath="./TestDataFile/Suggestion.xlsx";
+		String sheetName1="Bugs_4_29_2019";
 		try {
 
+			/*
 			ReadData1(folderName, fileName, sheetName);
 			ReadData2(folderName, fileName, sheetName);
-			writeData(row, col, value, newRow, color,sheetName, folderName, fileName); 			
-			String str="./TestDataFile/Suggestion.xlsx";
-			String sheetName1="Bugs_4_29_2019";
-			ReadAllExcelData(str, sheetName);
+			writeData(row, col, value, newRow, color,sheetName, folderName, fileName); 						
+			ReadAllExcelData(excelSheetPath, sheetName);
+			*/
+			
+			ReadAllExcelSheetDataByAlternativeWay(excelSheetPath, sheetName1);
 
 		} catch (Exception e) {
 
@@ -88,6 +92,19 @@ public class ExcelReadDemo {
 			 }
 			 System.out.println("\n");
 		 }
+	}
+	
+	public static void ReadAllExcelSheetDataByAlternativeWay(String excelPath, String sheeName)
+	{
+		Excel excelObj=new Excel();
+		try
+		{
+			excelObj.GetAllExcelSheetData(excelPath, sheeName);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
 	}
 
 	public static void ReadData1(String folderName, String fileName, String sheetName) {

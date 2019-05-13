@@ -1,9 +1,14 @@
 package com.java.framework.Utils;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.util.ZipSecureFile;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.*;
 
@@ -149,5 +154,63 @@ public class Excel {
 			e.printStackTrace();
 		}
 		return (numOFRows);
-	}		
+	}
+	
+	
+	public Workbook GetWorkBook(String excelSheetPath)
+	{
+		File file=null;
+		FileInputStream fis=null;		
+		Workbook workBook=null;
+		try
+		{
+			file=new File(excelSheetPath);
+			fis=new FileInputStream(file);
+			ZipSecureFile.setMinInflateRatio(0);
+			if(excelSheetPath.endsWith("xlsx"))
+			{
+				workBook=new XSSFWorkbook(fis);
+			}
+			else
+			{
+				workBook=new HSSFWorkbook(fis);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return workBook;
+	}
+	public void GetAllExcelSheetData(String excelSheetPath, String SheetName)
+	{
+		Workbook workBook=null;
+		Sheet sheet;
+		Row row;
+		Cell cell;
+		try
+		{
+			workBook=GetWorkBook(excelSheetPath);
+			sheet=workBook.getSheet(SheetName);
+			int totalNumberOfRows=sheet.getLastRowNum();
+			for(int i=1;i<totalNumberOfRows;i++)
+			{
+				row=sheet.getRow(i);
+				int totalCellNumber=row.getLastCellNum();
+				
+				for(int j=0;j<totalCellNumber-1;j++)
+				{
+					cell=row.getCell(j);					
+					cell.setCellType(CellType.STRING);					
+					String cellValue=cell.getStringCellValue();
+					 System.out.print(cellValue + " || ");
+				}
+				System.out.println();
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
 }

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="483419" started-at="2019-05-08T10:18:23Z" finished-at="2019-05-08T10:26:27Z">
+  <suite name="Default suite" duration-ms="9674" started-at="2019-05-13T09:46:50Z" finished-at="2019-05-13T09:46:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="483419" started-at="2019-05-08T10:18:23Z" finished-at="2019-05-08T10:26:27Z">
-      <class name="RoughWork.DateClick">
-        <test-method status="PASS" signature="OpenBrowser()[pri:0, instance:RoughWork.DateClick@78e117e3]" name="OpenBrowser" is-config="true" duration-ms="35666" started-at="2019-05-08T15:48:23Z" finished-at="2019-05-08T15:48:59Z">
+    <test name="Default test" duration-ms="9674" started-at="2019-05-13T09:46:50Z" finished-at="2019-05-13T09:46:59Z">
+      <class name="com.java.framework.TestClasses.DataDrivenTestDemo">
+        <test-method status="PASS" signature="InitBrowser()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@5be6e01c]" name="InitBrowser" is-config="true" duration-ms="4174" started-at="2019-05-13T15:16:50Z" finished-at="2019-05-13T15:16:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OpenBrowser -->
-        <test-method status="PASS" signature="ClickOnDate()[pri:0, instance:RoughWork.DateClick@78e117e3]" name="ClickOnDate" duration-ms="442413" started-at="2019-05-08T15:48:59Z" finished-at="2019-05-08T15:56:21Z">
+        </test-method> <!-- InitBrowser -->
+        <test-method status="PASS" signature="LoginTest()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@5be6e01c]" name="LoginTest" duration-ms="5486" started-at="2019-05-13T15:16:54Z" finished-at="2019-05-13T15:16:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClickOnDate -->
-      </class> <!-- RoughWork.DateClick -->
+        </test-method> <!-- LoginTest -->
+      </class> <!-- com.java.framework.TestClasses.DataDrivenTestDemo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
