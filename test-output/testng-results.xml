@@ -2,20 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9674" started-at="2019-05-13T09:46:50Z" finished-at="2019-05-13T09:46:59Z">
+  <suite name="Default suite" duration-ms="568624" started-at="2019-05-14T10:47:05Z" finished-at="2019-05-14T10:56:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9674" started-at="2019-05-13T09:46:50Z" finished-at="2019-05-13T09:46:59Z">
-      <class name="com.java.framework.TestClasses.DataDrivenTestDemo">
-        <test-method status="PASS" signature="InitBrowser()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@5be6e01c]" name="InitBrowser" is-config="true" duration-ms="4174" started-at="2019-05-13T15:16:50Z" finished-at="2019-05-13T15:16:54Z">
+    <test name="Default test" duration-ms="568624" started-at="2019-05-14T10:47:05Z" finished-at="2019-05-14T10:56:34Z">
+      <class name="com.java.framework.TestClasses.VerifyDownLoadFile">
+        <test-method status="PASS" signature="InitWebBrowser()[pri:0, instance:com.java.framework.TestClasses.VerifyDownLoadFile@4ddced80]" name="InitWebBrowser" is-config="true" duration-ms="11623" started-at="2019-05-14T16:17:05Z" finished-at="2019-05-14T16:17:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InitBrowser -->
-        <test-method status="PASS" signature="LoginTest()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@5be6e01c]" name="LoginTest" duration-ms="5486" started-at="2019-05-13T15:16:54Z" finished-at="2019-05-13T15:16:59Z">
+        </test-method> <!-- InitWebBrowser -->
+        <test-method status="PASS" signature="VerifyDownLoadedFile()[pri:0, instance:com.java.framework.TestClasses.VerifyDownLoadFile@4ddced80]" name="VerifyDownLoadedFile" duration-ms="556288" started-at="2019-05-14T16:17:17Z" finished-at="2019-05-14T16:26:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginTest -->
-      </class> <!-- com.java.framework.TestClasses.DataDrivenTestDemo -->
+        </test-method> <!-- VerifyDownLoadedFile -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.java.framework.TestClasses.VerifyDownLoadFile@4ddced80]" name="CloseBrowser" is-config="true" duration-ms="694" started-at="2019-05-14T16:26:33Z" finished-at="2019-05-14T16:26:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.java.framework.TestClasses.VerifyDownLoadFile -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

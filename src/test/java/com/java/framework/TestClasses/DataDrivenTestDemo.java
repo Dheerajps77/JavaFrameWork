@@ -15,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -43,6 +44,7 @@ public class DataDrivenTestDemo {
 			driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
 			driver.get(obj.getProperty("Url"));
+			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
