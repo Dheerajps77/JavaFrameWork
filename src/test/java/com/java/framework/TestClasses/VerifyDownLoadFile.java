@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +24,8 @@ public class VerifyDownLoadFile {
 	EnvironmentPropertiesReader en;
 	WebDriver driver;
 	WebDriverWait wait;
+	Logger log=Logger.getLogger("devpinoyLogger");
+	
 	@BeforeTest
 	public void InitWebBrowser()
 	{
@@ -32,8 +35,11 @@ public class VerifyDownLoadFile {
 		
 		try
 		{
+			log.info("Setting browser properties");
 			System.setProperty("webdriver.chrome.driver", browserPath);
+			log.info("Instatiating browser driver");
 			driver=new ChromeDriver();
+			log.info("Hitting URL : --> " + url);
 			driver.get(url);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -53,25 +59,25 @@ public class VerifyDownLoadFile {
 		String downloadedFilePath="C:\\Users\\dheeraj.singh\\Downloads";
 		try
 		{
-			animatedColorsBtn=driver.findElement(By.xpath("//a[text()='animatedcolors.xlsm']"));
-			
+			log.info("Clicked on animatedColors button");
+			animatedColorsBtn=driver.findElement(By.xpath("//a[text()='animatedcolors.xlsm']"));			
 			wait=new WebDriverWait(driver, 200);
 			wait.until(ExpectedConditions.elementToBeClickable(animatedColorsBtn)).click();
-			
+			log.info("file got downloaded");
 			file=new File(downloadedFilePath);
 			String fileName="";
 			File[] files=file.listFiles();
 			
 			String downloadedFile=files[0].getName().toString().trim();
-			System.out.println("Downloaded file is --> "+ downloadedFile);
+			System.out.println("Downloaded file is --> "+ downloadedFile);			
 			int totalFilePresentAtDownload=files.length;
 			for(int i=0;i<totalFilePresentAtDownload;i++)
 			{
 				fileName=files[i].getName().toString().trim();				
-				System.out.println(fileName);
-				
+				System.out.println(fileName);				
 				if(downloadedFile.equalsIgnoreCase(fileName))
 				{
+					log.info("Downloaded file name is + "+fileName +" and downloaded dateTime is : ");
 					System.out.println("Download file has been verified -> "+fileName);
 				}
 				else

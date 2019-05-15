@@ -1,0 +1,9 @@
+12:17:14,680  INFO devpinoyLogger:44 – class java.lang.Class test started
+12:17:14,682  INFO devpinoyLogger:45 – Setting browser properties
+12:17:14,682  INFO devpinoyLogger:47 – Instatiating browser driver
+12:17:17,510  INFO devpinoyLogger:49 – Hitting URL : --> http://spreadsheetpage.com/index.php/file/C35/P10/
+12:17:23,527  INFO devpinoyLogger:55 – Clicked on animatedColors button
+12:17:24,581  INFO devpinoyLogger:98 – file name : animateddcolors.xlsmgot downloaded
+12:17:24,585 ERROR devpinoyLogger:124 – Download file has not been verified
+12:17:24,585 ERROR devpinoyLogger:70 – Not verified
+12:17:24,586  INFO devpinoyLogger:74 – class java.lang.Class test end

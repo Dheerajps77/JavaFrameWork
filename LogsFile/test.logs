@@ -1,0 +1,9 @@
+15/05/2019 12:17:14 devpinoyLogger class java.lang.Class test started
+15/05/2019 12:17:14 devpinoyLogger Setting browser properties
+15/05/2019 12:17:14 devpinoyLogger Instatiating browser driver
+15/05/2019 12:17:17 devpinoyLogger Hitting URL : --> http://spreadsheetpage.com/index.php/file/C35/P10/
+15/05/2019 12:17:23 devpinoyLogger Clicked on animatedColors button
+15/05/2019 12:17:24 devpinoyLogger file name : animateddcolors.xlsmgot downloaded
+15/05/2019 12:17:24 devpinoyLogger Download file has not been verified
+15/05/2019 12:17:24 devpinoyLogger Not verified
+15/05/2019 12:17:24 devpinoyLogger class java.lang.Class test end
