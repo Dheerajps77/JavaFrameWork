@@ -17,7 +17,7 @@ public class EnvironmentPropertiesReader {
 		properties = PropertiesFile();		
 	}
 	public Properties PropertiesFile() {
-		File file = new File("C:\\Users\\dheeraj.singh\\eclipse-workspace\\JavaFrameWork\\src\\main\\java\\com\\java\\framework\\Config\\Config.properties");
+		File file = new File("C:\\Users\\dheeraj.singh\\git\\JavaFrameWork\\src\\main\\java\\com\\java\\framework\\Config\\Config.properties");
 		FileInputStream fileInput = null;
 		Properties props = new Properties();
 		try {
