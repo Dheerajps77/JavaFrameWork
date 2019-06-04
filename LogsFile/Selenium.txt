@@ -1,9 +1,8 @@
-12:17:14,680  INFO devpinoyLogger:44 â€“ class java.lang.Class test started
-12:17:14,682  INFO devpinoyLogger:45 â€“ Setting browser properties
-12:17:14,682  INFO devpinoyLogger:47 â€“ Instatiating browser driver
-12:17:17,510  INFO devpinoyLogger:49 â€“ Hitting URL : --> http://spreadsheetpage.com/index.php/file/C35/P10/
-12:17:23,527  INFO devpinoyLogger:55 â€“ Clicked on animatedColors button
-12:17:24,581  INFO devpinoyLogger:98 â€“ file name : animateddcolors.xlsmgot downloaded
-12:17:24,585 ERROR devpinoyLogger:124 â€“ Download file has not been verified
-12:17:24,585 ERROR devpinoyLogger:70 â€“ Not verified
-12:17:24,586  INFO devpinoyLogger:74 â€“ class java.lang.Class test end
+15:46:34,473  INFO devpinoyLogger:34 – Setting browser properties
+15:46:34,475  INFO devpinoyLogger:36 – Instatiating browser driver
+15:46:38,206  INFO devpinoyLogger:41 – Hitting URL : --> https://www.tripiflights.com/
+15:47:15,217  INFO devpinoyLogger:64 – selecting departing date
+15:47:15,327  INFO devpinoyLogger:71 – selecting month
+15:47:15,425  INFO devpinoyLogger:71 – selecting month
+15:47:15,510  INFO devpinoyLogger:71 – selecting month
+15:47:15,699  INFO devpinoyLogger:96 – [Ljava.lang.StackTraceElement;@651aed93
