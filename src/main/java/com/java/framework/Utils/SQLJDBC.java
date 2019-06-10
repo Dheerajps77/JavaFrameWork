@@ -44,8 +44,7 @@ public class SQLJDBC {
 	// This method will fetch the select any existing database in the SQL schema using SQL USE statement
 	public static ResultSet GetIntoDatadase(String useDatabaseName)
 	{
-		try {
-			
+		try {			
 			statement=connection.createStatement();
 			resultSet=statement.executeQuery(useDatabaseName);
 			

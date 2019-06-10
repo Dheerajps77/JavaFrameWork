@@ -38,7 +38,7 @@ public class JDBCTestDemo {
 	@BeforeTest
 	public void CreateSQLConnection()
 	{
-		objEnvironmentPropertiesReader=EnvironmentPropertiesReader.getInstance();
+		prop=EnvironmentPropertiesReader.getInstance().PropertiesFile();
 		prop=objEnvironmentPropertiesReader.PropertiesFile();
 		JDBC_driver = prop.getProperty("JDBC_Driver");
 		SQLServer = prop.getProperty("SQLServer");
@@ -57,33 +57,16 @@ public class JDBCTestDemo {
 			e.printStackTrace();
 		}		
 	}
-	@Test(priority=0)
+	@Test(priority=0, enabled=false)
 	public void ToFetchAllRecordsFromTable() {		
 		try {
-			/*
-			objEnvironmentPropertiesReader=EnvironmentPropertiesReader.getInstance();
-			prop=objEnvironmentPropertiesReader.PropertiesFile();
-			JDBC_driver = prop.getProperty("JDBC_Driver");
-			SQLServer = prop.getProperty("SQLServer");
-			hostName = prop.getProperty("Host");
-			portNumber = prop.getProperty("PortNumber");
-			dataBaseName = prop.getProperty("DB");
-			userId = prop.getProperty("User");
-			password = prop.getProperty("Password");
-			*/
+			
 			selectStatement=prop.getProperty("Select");
 			tableName=prop.getProperty("TableName");			
 			databasename=prop.getProperty("DataBaseName");			
 			sqlUSESchema=prop.getProperty("SQLUSESchema");
-			tableSchema=prop.getProperty("TableSchema");
 			
 			useSchema=sqlUSESchema + " " + databasename;
-			
-			/*
-			connectionNameString = SQLServer + hostName + portNumber + dataBaseName;
-			connection = SQLJDBC.CreatingSQLConnection(JDBC_driver, connectionNameString, userId,
-					password);
-					*/
 			selectQuery = selectStatement + " " + tableName;
 			resultSet = SQLJDBC.SelectQueries(selectQuery);
 
@@ -113,12 +96,15 @@ public class JDBCTestDemo {
 	{
 		selectStatement=prop.getProperty("Select");
 		tableName=prop.getProperty("TableName");
+		tableSchema=prop.getProperty("TableSchema");
 		String toGetAllTableNameUnderDabtase="";
 		
 		try {
 
-			toGetAllTableNameUnderDabtase=selectStatement + " " +tableSchema;
+			toGetAllTableNameUnderDabtase=selectStatement + " " + tableSchema;
 			resultSet = SQLJDBC.SelectQueries(toGetAllTableNameUnderDabtase);
+			
+			System.out.println("Below are the table which is present under table " + tableName);
 			while (resultSet.next()) {
 				// Retrieve by column name			
 				String tablename = resultSet.getString("name");
@@ -129,8 +115,7 @@ public class JDBCTestDemo {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
+	}	
 	
 	@AfterTest
 	public void CloseConnection()

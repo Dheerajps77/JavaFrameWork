@@ -1,9 +1,10 @@
 package com.java.framework.ListenersClass;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
-
+import org.openqa.selenium.WebDriver;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ISuite;
@@ -20,6 +21,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.java.framework.TestClasses.ExtentReportDemo;
+import com.java.framework.Utils.CaptureScreenshot;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener, IInvokedMethodListener {
 
@@ -28,9 +30,9 @@ public class ExtentReportListener implements ITestListener, ISuiteListener, IInv
 	ExtentHtmlReporter e1;
 	ExtentReports e2;
 	ExtentTest e3;
-
+	CaptureScreenshot captureScreenshot;
 	ExtentReportDemo exObj;
-	
+	WebDriver driver;
 	public void onStart(ISuite suite) {
 		exObj=new ExtentReportDemo();
 		String reportPath = System.getProperty("user.dir") + "/ExtentReports/"+ exObj.getClass().getName()+ " " + new Date().getTime()+ ".html";
@@ -85,6 +87,13 @@ public class ExtentReportListener implements ITestListener, ISuiteListener, IInv
 		if (result.getStatus() == ITestResult.FAILURE) {
 			e3.log(Status.FAIL, MarkupHelper.createLabel(result.getMethod().getMethodName(), ExtentColor.RED));
 			e3.log(Status.FAIL, result.getMethod().getMethodName() + " test failed");
+			captureScreenshot=new CaptureScreenshot();
+			String screenshotCapture=captureScreenshot.TakeScreenshot(driver, result.getMethod().getMethodName());
+			try {
+				e3.addScreenCaptureFromPath(screenshotCapture);
+			} catch (IOException e) {				
+				e.printStackTrace();
+			}
 			e3.log(Status.FAIL, result.getThrowable().getCause());
 			e3.log(Status.FAIL, result.getThrowable().getMessage());
 		}

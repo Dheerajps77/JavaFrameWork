@@ -27,17 +27,20 @@ public class CaptureScreenshot {
 		return screenshotpath;
 	}
 	
-	public void TakeScreenshot(WebDriver driver, String fileName)
+	public String TakeScreenshot(WebDriver driver, String fileName)
 	{
+		String filePath="";
 		try
 		{
 			Calendar cal = Calendar.getInstance();
 	        SimpleDateFormat sdf = new SimpleDateFormat( "yyyyMMdd-hhmmss-SSS" );
-	        String filePath = "screenshots/"+fileName+" "+ sdf.format( cal.getTime() ) + ".jpg";
+	        filePath = "screenshots/"+fileName+" "+ sdf.format( cal.getTime() ) + ".jpg";
 	        screenshot(driver, filePath);
 		}
 		catch (Exception e) {
-			
+			e.printStackTrace();
 		}
+		
+		return filePath;
 	}
 }

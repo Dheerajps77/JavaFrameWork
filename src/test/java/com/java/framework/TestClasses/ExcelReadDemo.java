@@ -27,7 +27,7 @@ public class ExcelReadDemo {
 
 	static Object ob;
 	static Excel objExcel;
-
+	Properties prop;
 	public static void main(String[] args) {
 
 		objExcel = new Excel();

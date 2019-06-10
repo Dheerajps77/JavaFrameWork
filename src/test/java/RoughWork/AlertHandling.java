@@ -25,9 +25,7 @@ public class AlertHandling {
 		driver.switchTo().alert();
 		
 		String alertName=driver.switchTo().alert().getText();
-		System.out.println(alertName);
-		
-		
+		System.out.println(alertName);				
 	}
 
 }
