@@ -21,16 +21,16 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.java.framework.Utils.EnvironmentPropertiesReader;
-import com.java.framework.Utils.Excel;
+import com.java.framework.Utils.ExcelUtil;
 
 public class ExcelReadDemo {
 
 	static Object ob;
-	static Excel objExcel;
+	static ExcelUtil objExcel;
 	Properties prop;
 	public static void main(String[] args) {
 
-		objExcel = new Excel();
+		objExcel = new ExcelUtil();
 		ob = new Object();
 		Properties prop;
 		prop = EnvironmentPropertiesReader.getInstance().PropertiesFile();
@@ -96,7 +96,7 @@ public class ExcelReadDemo {
 	
 	public static void ReadAllExcelSheetDataByAlternativeWay(String excelPath, String sheeName)
 	{
-		Excel excelObj=new Excel();
+		ExcelUtil excelObj=new ExcelUtil();
 		try
 		{
 			excelObj.GetAllExcelSheetData(excelPath, sheeName);

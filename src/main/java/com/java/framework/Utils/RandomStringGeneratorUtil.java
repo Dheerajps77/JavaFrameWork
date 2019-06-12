@@ -1,6 +1,6 @@
 package com.java.framework.Utils;
 
-public class RandomStringGeneratorUtils {
+public class RandomStringGeneratorUtil {
 	
 	
 	public static String RandomString()

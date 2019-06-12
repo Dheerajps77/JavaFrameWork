@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.java.framework.Utils.EnvironmentPropertiesReader;
-import com.java.framework.Utils.GenericUtils;
+import com.java.framework.Utils.GenericUtil;
 
 public class GmailCommonFunctions {
 
@@ -28,13 +28,13 @@ public class GmailCommonFunctions {
 	public void GmailLogin(WebDriver driver, String gmailUserName, String password, String subject) throws Exception {
 		//String linkText = null;
 		//String subjectText;		
-		GenericUtils objGenericUtils = new GenericUtils(driver);
+		GenericUtil objGenericUtils = new GenericUtil(driver);
 		prop=EnvironmentPropertiesReader.getInstance().PropertiesFile();
 		try {			
 			objGenericUtils.TurnOnImplicitWaits();
 			objGenericUtils.EnterTextUsingActions(driver.findElement(userNameField), gmailUserName);
 			objGenericUtils.WaitForElementToBeClickable(driver.findElement(userNameNextButton));
-			GenericUtils.EnterText(driver.findElement(passwordField), password);
+			GenericUtil.EnterText(driver.findElement(passwordField), password);
 			objGenericUtils.WaitForElementToBeClickable(driver.findElement(passwordNextButton));			
 			/*List<WebElement> listOfElement = driver.findElements(listOfEmails);
 			for (int i = 0; i < listOfElement.size(); i++) {
@@ -72,7 +72,7 @@ public class GmailCommonFunctions {
 
 	public void GmailLogOut(WebDriver driver) throws Exception {
 		
-		GenericUtils objGenericUtils = new GenericUtils(driver);		
+		GenericUtil objGenericUtils = new GenericUtil(driver);		
 		prop=EnvironmentPropertiesReader.getInstance().PropertiesFile();
 		
 		try {

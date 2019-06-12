@@ -21,7 +21,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.java.framework.TestClasses.ExtentReportDemo;
-import com.java.framework.Utils.CaptureScreenshot;
+import com.java.framework.Utils.CaptureScreenshotUtil;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener, IInvokedMethodListener {
 
@@ -30,7 +30,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener, IInv
 	ExtentHtmlReporter e1;
 	ExtentReports e2;
 	ExtentTest e3;
-	CaptureScreenshot captureScreenshot;
+	CaptureScreenshotUtil captureScreenshot;
 	ExtentReportDemo exObj;
 	WebDriver driver;
 	public void onStart(ISuite suite) {
@@ -87,7 +87,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener, IInv
 		if (result.getStatus() == ITestResult.FAILURE) {
 			e3.log(Status.FAIL, MarkupHelper.createLabel(result.getMethod().getMethodName(), ExtentColor.RED));
 			e3.log(Status.FAIL, result.getMethod().getMethodName() + " test failed");
-			captureScreenshot=new CaptureScreenshot();
+			captureScreenshot=new CaptureScreenshotUtil();
 			String screenshotCapture=captureScreenshot.TakeScreenshot(driver, result.getMethod().getMethodName());
 			try {
 				e3.addScreenCaptureFromPath(screenshotCapture);

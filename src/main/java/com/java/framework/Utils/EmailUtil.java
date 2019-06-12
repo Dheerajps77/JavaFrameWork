@@ -21,7 +21,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-public class Email {
+public class EmailUtil {
 
 	public static void SendEmailNow(String hostName, String portID, String senderEmailID, String senderPassword,
 			String[] receiverEmailArray, String[] ccEmailArray, long pageLoadTime_Minutes, String reportPath) throws Exception {
@@ -49,7 +49,7 @@ public class Email {
 		// Browser console file
 		// inlineImages.put("Browser console file",browserConsloe);
 
-		ArrayList<String> listOfFiles = GenericUtils
+		ArrayList<String> listOfFiles = GenericUtil
 				.getfileNamesFromFolder(System.getProperty("user.dir") + "\\FailedTestsScreenshots");
 		System.out.println(listOfFiles);
 

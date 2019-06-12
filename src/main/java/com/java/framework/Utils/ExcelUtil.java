@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.*;
 
 import java.io.*;
 
-public class Excel {
+public class ExcelUtil {
 	public File file;
 	public FileInputStream fileStream;
 	public XSSFWorkbook workbook;
