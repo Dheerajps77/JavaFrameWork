@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.java.framework.Utils.EnvironmentPropertiesReader;
-import com.java.framework.Utils.SQLJDBC;
+import com.java.framework.Utils.SQLJDBCUtils;
 
 public class JDBCTestDemo {
 
@@ -50,7 +50,7 @@ public class JDBCTestDemo {
 		
 		try {
 			connectionNameString = SQLServer + hostName + portNumber + dataBaseName;
-			connection = SQLJDBC.CreatingSQLConnection(JDBC_driver, connectionNameString, userId,
+			connection = SQLJDBCUtils.CreatingSQLConnection(JDBC_driver, connectionNameString, userId,
 					password);
 			
 		} catch (Exception e) {
@@ -68,7 +68,7 @@ public class JDBCTestDemo {
 			
 			useSchema=sqlUSESchema + " " + databasename;
 			selectQuery = selectStatement + " " + tableName;
-			resultSet = SQLJDBC.SelectQueries(selectQuery);
+			resultSet = SQLJDBCUtils.SelectQueries(selectQuery);
 
 			// This will fectch the all details in table
 			while (resultSet.next()) {
@@ -102,7 +102,7 @@ public class JDBCTestDemo {
 		try {
 
 			toGetAllTableNameUnderDabtase=selectStatement + " " + tableSchema;
-			resultSet = SQLJDBC.SelectQueries(toGetAllTableNameUnderDabtase);
+			resultSet = SQLJDBCUtils.SelectQueries(toGetAllTableNameUnderDabtase);
 			
 			System.out.println("Below are the table which is present under table " + tableName);
 			while (resultSet.next()) {

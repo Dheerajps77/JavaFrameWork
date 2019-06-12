@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class SQLJDBC {
+public class SQLJDBCUtils {
 
 	// JDBC driver name and database URL
 	// static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
