@@ -26,7 +26,7 @@ public class TextFromImage {
 	
 	public static void main(String[] args) {
 		
-		String imagePath=(System.getProperty("user.dir")+"/SikuliImageCapture/Capture.PNG");
+		String imagePath=(System.getProperty("user.dir")+"/SikuliImageCapture/Capture1.png");
 		String string=GetTextFromImage(imagePath);
 		System.out.println(string);
 		
