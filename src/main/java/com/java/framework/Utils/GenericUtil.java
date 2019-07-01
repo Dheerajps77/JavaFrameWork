@@ -360,4 +360,18 @@ public class GenericUtil {
 			throw e;
 		}
 	}
+	
+	// This function will drag your slider to some Extent
+	public void SliderDragToSomeExtent(int xAxis, int yAxis, WebElement element)
+	{
+		Actions actions=null;
+		try {
+			
+			actions=new Actions(driver);
+			actions.dragAndDropBy(element, xAxis, yAxis).build().perform();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
