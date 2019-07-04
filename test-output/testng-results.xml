@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+  <suite name="Default suite" duration-ms="304753" started-at="2019-07-04T06:17:57Z" finished-at="2019-07-04T06:23:01Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="304753" started-at="2019-07-04T06:17:57Z" finished-at="2019-07-04T06:23:01Z">
+      <class name="com.java.framework.TestClasses.DataDrivenTestDemo">
+        <test-method status="PASS" signature="InitBrowser()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@4f209819]" name="InitBrowser" is-config="true" duration-ms="7984" started-at="2019-07-04T11:47:57Z" finished-at="2019-07-04T11:48:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InitBrowser -->
+        <test-method status="PASS" signature="LoginTest()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@4f209819]" name="LoginTest" duration-ms="296737" started-at="2019-07-04T11:48:05Z" finished-at="2019-07-04T11:53:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method status="PASS" signature="QuiteBrowser()[pri:0, instance:com.java.framework.TestClasses.DataDrivenTestDemo@4f209819]" name="QuiteBrowser" is-config="true" duration-ms="1" started-at="2019-07-04T11:53:01Z" finished-at="2019-07-04T11:53:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+      </class> <!-- com.java.framework.TestClasses.DataDrivenTestDemo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

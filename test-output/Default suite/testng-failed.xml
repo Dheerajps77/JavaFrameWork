@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.java.framework.TestClasses.JDBCTestDemo">
+      <class name="com.java.framework.TestClasses.ImageStoreBasisOnWebElement">
         <methods>
-          <include name="ToFetchAllTableNameFromDB"/>
-          <include name="CreateSQLConnection"/>
-          <include name="ToFetchAllRecordsFromTable"/>
+          <include name="ImageReader"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.java.framework.TestClasses.JDBCTestDemo -->
+      </class> <!-- com.java.framework.TestClasses.ImageStoreBasisOnWebElement -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

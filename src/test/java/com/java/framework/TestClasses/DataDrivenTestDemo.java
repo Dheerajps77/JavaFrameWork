@@ -15,7 +15,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -43,7 +42,9 @@ public class DataDrivenTestDemo {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-			driver.get(obj.getProperty("Url"));
+			//driver.get(obj.getProperty("Url"));
+			
+			driver.get("https://www.linkedin.com/login");
 			
 		}
 		catch (Exception e) {
@@ -68,7 +69,7 @@ public class DataDrivenTestDemo {
 			
 			WebElement userName=driver.findElement(By.xpath("//input[@id='username']"));
 			WebElement passWord=driver.findElement(By.xpath("//input[@id='password']"));
-			WebElement loginBtn=driver.findElement(By.xpath("//button[@id='loginBtn']"));			
+			WebElement loginBtn=driver.findElement(By.xpath("//button[text()='Sign in']"));			
 			String userTextBoxValue="";
 			String passTextBoxValue="";
 			file=new File(excelSheet);
@@ -99,27 +100,19 @@ public class DataDrivenTestDemo {
 					cell.setCellType(CellType.STRING);
 					user=sheet.getRow(i).getCell(k).getStringCellValue().toString().trim();
 					pass=sheet.getRow(i).getCell(k+1).getStringCellValue().toString().trim();
-					userTextBoxValue=userName.getAttribute("value");											
-					if(!userTextBoxValue.isEmpty())
+					
+					userTextBoxValue=userName.getAttribute("value");																
+					if(userTextBoxValue.equalsIgnoreCase(user))
 					{
 						Thread.sleep(2000);
 						userName.clear();
 						Thread.sleep(2000);
 					}					
-					userName.sendKeys(user);				
-					passTextBoxValue=passWord.getAttribute("value");
-					if(!passTextBoxValue.isEmpty())
-					{
-						Thread.sleep(2000);
-						passWord.clear();
-						Thread.sleep(2000);
-					}
+					userName.sendKeys(user);
 					passWord.sendKeys(pass);
 					loginBtn.click();
-				}
-				
-			}
-			
+				}				
+			}			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -141,6 +134,4 @@ public class DataDrivenTestDemo {
 			e.printStackTrace();
 		}
 	}
-	
-
 }
