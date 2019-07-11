@@ -16,7 +16,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcelSheetDataUsingHashMap {
-
+String string;
 	public static Map<String, Map<String, String>> ReadingHashMapData() {
 		File file = null;
 		FileInputStream fileInputStream = null;
